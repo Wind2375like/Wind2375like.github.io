@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wind_like">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="每一次相遇都是缘分, 把手上的牌打到极致!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EPFL MSCS First Semester Experience (in Chinese)">
+<meta property="og:url" content="http://example.com/2022/12/30/2022-12-30-epfl-1st-semester/index.html">
+<meta property="og:site_name" content="Wind_like">
+<meta property="og:description" content="每一次相遇都是缘分, 把手上的牌打到极致!">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/lamac.png">
+<meta property="article:published_time" content="2022-12-30T16:35:52.000Z">
+<meta property="article:modified_time" content="2023-01-22T22:27:37.380Z">
+<meta property="article:author" content="Wind_like">
+<meta property="article:tag" content="Computer Science">
+<meta property="article:tag" content="Master Application">
+<meta property="article:tag" content="Diary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/lamac.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>EPFL MSCS First Semester Experience (in Chinese) - Wind_like</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/heimu.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Wind_like</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="EPFL MSCS First Semester Experience (in Chinese)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-30 17:35" pubdate>
+          Friday, December 30th 2022, 5:35 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          37 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">EPFL MSCS First Semester Experience (in Chinese)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>每一次相遇都是缘分, 把手上的牌打到极致!</p>
+<span id="more"></span>
+<p>四个月前的锅巴:<br><img alt="图 3" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/54c2ee188b05667a9f37af81d9102ba1bfbe5bd9b2bcd164a9cf3a4a398a84d2.png" srcset="/img/loading.gif" lazyload width="50%"/></p>
+<p>现在的锅巴:<br><img alt="图 5" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/1fa53215c490f62c6dabb83fbcde13551198d2d4cc7ae081caa698081ff62b26.png" srcset="/img/loading.gif" lazyload width="50%" /></p>
+<hr>
+<p><strong>温馨提示</strong>:</p>
+<ul>
+<li>本文仅代表个人观点</li>
+<li>本文不保证所说信息的真实性</li>
+<li>本文不保证所说信息的时效性 (截至 2022 年末)</li>
+<li>本人的自身水平影响了我对 EPFL 的感受</li>
+</ul>
+<hr>
+<p>去剑桥见大佬被刺激到了, 正好在 EPFL 的这一学期也要过去了, 写点东西记录一下, 希望能提供点信息<span class="heimu" title="=.=">或者噪声=.=</span>?</p>
+<h2 id="没什么用的概况">没什么用的概况</h2>
+<p>EPFL 很牛逼, 是瑞士的唯二两所牛逼<span class="heimu" title="=.="> (希望其他瑞士学校不要打我) </span>学校之一. EPFL 地处瑞士法语区洛桑, 风景如画, 好山好水好风光, 随手一拍就是个壁纸.</p>
+<p>我的专业 MSCS, 120 ECTS (学分), 1 ECTS 代表一周两个小时的<strong>理论</strong>工作量 (可能是教授拍脑袋想的). 这 120 ECTS 里面包括 72 学分的 core 课和 option 课 (core 至少需要 30 学分), 12 学分的 semester project, 6 学分的人文课 (分上下两学期, 一学期 3 学分), 30 学分的 master thesis, 以及 0 学分的<strong>强制</strong>实习 (自己找或者学校平台会挂一些岗位, 基本都是欧洲的). 选课有一定自由度, 你可以选最多 15 学分的方案外课程甚至本科生课程当作 option 课. 其他专业的选课自由度好像也很高, 比如你甚至可以把 EE 上成 CS (<span class="heimu" title="=.=">万物皆可转码</span>). 这边课程强度我和身边的人认为一学期 30 学分已经很极限了, 会很累, 所以两年基本是读不下来的… 这边平均 2.5 年读完 (四学期课, 一学期毕设), 上限是 8 学期, 这里的时间不包括实习所花的时间, 大部分人还有整学期实习, 所以一般三年读完.</p>
+<img alt="图 1" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/6390279235e5785c4ab5bff114e0cf8dc2ebcda67393a03d6573985fb719a381.png" srcset="/img/loading.gif" lazyload width="50%" class="center"/>
+<p>具体的 study plan 在<a target="_blank" rel="noopener" href="https://edu.epfl.ch/studyplan/en/master/computer-science/">这里</a>. 每门课会告诉你授课语言 (全都是英文), 在哪一学期开 (1 代表秋季, 2 代表夏季), LEP 代表 lecture, exercise 和 project. exam 分为 oral, written, 和 during the semester.</p>
+<img alt="图 2" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/3ee1b5312aa8383f74548996be252d6d27dd9280dd22896916f43da5c216fdfa.png" srcset="/img/loading.gif" lazyload />
+<p>什么是 specialization?</p>
+<blockquote>
+<p>A specialization is a set of courses that allows students to deepen their knowledge of a particular aspect of their main discipline. Thus, it provides  them with the opportunity to develop expertise in a particular area of their master’s degree.</p>
+<p>Computer science and Communication systems students can choose either a specialization or a minor.</p>
+</blockquote>
+<p>这里的 minor 指的是辅修, 辅修规则我不太了解.</p>
+<p>然后洛桑学联有调查过今年的<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Be_tGu9OdUyFEcW1sXHNlQ">录取情况</a>, 不过填的人不是很多, 因为今年不知道为什么发的特别晚, 导致很多拿到 offer 但是没有去的人没有填信息, 甚至去了的人也没有… (比如 XJTU 去了 4 个 ms, 其实还有两个 phd, 还有拿了 offer 没去的)</p>
+<p>还可以去 <a target="_blank" rel="noopener" href="https://luocun.org/"><code>luocun.org</code></a> 进一步了解关于洛桑的各种信息.</p>
+<p>经过一个学期, 我感觉在 CS DS CSE EE 这些想科研的人还是很少很少, 绝大部分都是找工了. 其实我是想走科研的路的, 一个学期之后这种感觉愈发强烈, 但是这里还是有点和我想象的不一样.</p>
+<h2 id="天真的想象">天真的想象</h2>
+<p>当初我在 ETHz, EPFL, UCSD, 和 PSU 四所学校之间痛苦选择. 为了有更多时间准备科研和没那么卷去掉了 UCSD, 然后为了更好的平台去掉了 PSU, 为了更感兴趣的教授选了 EPFL. 当时是这么盘算的 (重要性递减):</p>
+<ul>
+<li>research-based master 科研氛围浓</li>
+<li>Antoine 组好厉害</li>
+<li>资源没那么卷</li>
+<li>多上点课补点基础, 本科啥也不会</li>
+<li>安全且便宜</li>
+<li>而且强制实习可以让我体验一下工业界, 感受不同的道路, 算是加分项</li>
+</ul>
+<p>当时我也有一些风险考虑:</p>
+<ul>
+<li>课程压力太大不好做科研</li>
+<li>人好像并不少, CS 有一二百人呢</li>
+<li>因为人有点多, 所以可能会卷, 资源不一定足</li>
+</ul>
+<p>到现在我发现和我想象的不太一样. 这里的人大部分心思并不在科研, 只想找工. 课程的 workload 被我低估了 (算了一下一学期也就三门课, 应该能抽出时间科研吧), 而且课程对科研的实际作用似乎挺有限的. 我高估了自己的能力, 一学期在 seminar 里基本是跟不上别人, 语言表达也是问题, 直接展现了自己最烂的一面. 我也没有考虑到其他专业也在竞争的 pool 内. 光 CS 就快 200, 还有 DS, CSE, EE, 而且他们真的好强, 上了一学期课发现自己原来就是个 five.</p>
+<p>安全是挺安全的, 甚至比国内安全. 但是便宜… 还是算了. 这边物价是全欧洲最贵 (比英国还贵), 税还高. 一年 15w 的开销似乎打不住, 我这几个月都花了 2000+ CHF, 这还是在每个晚上都在挨饿的情况下 (我食量很大quq)… 如果想省钱就只能住 flatshare (但是房子是随机分的, 你也不知道你有什么房子, 有就不错了), 自己做饭 (后面真的没时间, 外面一顿饭 10+), 不旅游不滑雪只学习 (来这里就知道滑雪有多贵了), 那来欧洲的意义是什么… 然后基本要读三年啊, 也不便宜…</p>
+<p><span class="heimu" title="=.=">总是会想, 如果去 PSU 就好了, 但是没有&quot;如果&quot;. 来这里一定是某种缘分.</span></p>
+<h2 id="这课上得还挺值">这课上得还挺值</h2>
+<p>EPFL 的选课具有一定<strong>自由度</strong>, 允许学科交叉, 像 CS 很多课会在 EE 里出现, 而且方案外也可以选 15 学分的课, 身边有人选本科生的算法, sweng, 而我这学期选了 phd 的 NLP seminar, 之后还打算用这 15 分的 quota 选数学系的 causal thinking.</p>
+<p>EPFL 这边的课讲得不能算惊艳, 老师们上课是都有各种口音, 讲得也不是很有意思, 很多也不易于理解. 但是至少上课讲的<strong>核心部分是尽量让所有人能听懂的</strong>, 听不懂 ppt 上的注释或者讲义材料也能让我课后慢慢看懂, 不至于像我本科的时候讲得啥也听不懂, 期末从头找其他材料自学. 而且这些课都是&quot;免费&quot;的 (学费一学期 780 CHF, 不跟白送一样), 对比 cam 的高价学费, 一节课几千人民币岂不美哉.</p>
+<p>这边的课程<strong>广度和深度</strong>跟本科的垃圾相比完全不在一个层面. 其实本科的培养方案还能看, 但是讲的东西就是又少 (EPFL 本科生课的工作量赶上 XJTU 的 2-4 倍了), 又不结合实际应用 (CS 相关的课的代码量几乎为零, 就算有也不会变, 找去年学长学姐要就行, 只顾刷题好考研), 又和现在的方向脱钩 (EPFL 会结合最新的东西来讲, 而且从算法的层面让所有人搞懂), 所以我在本科大概是浪费了三年的时间. 这学期我选的课既有 heavy math (CS-433 ML), 也有 interesting algos (CS-401 Ada, CS-423 DIS), 还有 heavy coding exercises (all), 还有 phd 课程 (CS-612). 在这里上了一学期课感觉各方面能力提升了不少.</p>
+<p>但是一学期的 workload 真的痛苦, 大部分时间都用在课程上了, 导致很难抽出时间自学/做科研, 这学期还是挺被动的. 我才选了 25 学分, 有的人选 30 学分, 真的痛苦面具. 对了, 学分和工作量并不完全对等, 比如有的 4 学分课想学好可能不是一周 8h 的工作量, 而有的 8 学分课可能很水.</p>
+<p>还有一点是就算课程与时俱进, 但是课程还是比较偏离目前科研的最新方向的 (可能 NLP 发展太快了吧). 感觉一学期过去了, 我更加脱离学术圈的发展, 更落伍了. 当然没有基础也看不明白论文, 还是要花点时间从零积累的, 只不过这个度要平衡好吧.</p>
+<h2 id="老师与学生">老师与学生</h2>
+<p>EPFL 的老师不算勤快, 和剑桥 “student is the king” 相比还是逊色很多, 但是至少讲课这块会认真准备, 每年都会更新 (比如 Bob 的 Ada 课在 ppt 的注释会写自己往年讲课的时间管理情况), 并且不会在自己不懂的情况讲课. 这种敬业精神大部分 XJTU 自动化的老师并没有.</p>
+<p>问题是像 CS 系严重扩招, 选课又自由, 导致课程容量太大 (ML, Ada 全都是 400 人大课), 学生很难能和老师互动 (通常是通过助教, 论坛, etc. 获得帮助).</p>
+<p>这边的 semester project 也是一样, 学生太多了, 老师没空带, 一般都是 phd 带, 可能连老师都见不着几面, 所以建立 connection 并不容易.</p>
+<p>大概的确是我太菜了.</p>
+<h2 id="研究型硕士">研究型硕士?</h2>
+<p>当初我以为瑞士的 master 是 research-based 的, 然后上了半学期课有一天听两个同学讨论, 说他们认识好几个放着美国 phd 不要来这里读 MS 的, 因为以为这里是 research-based master, 而且平台更高, 结果大呼上当受骗. 我当时直接绷不住了, 纳闷我来这儿是图啥啊…</p>
+<p>EPFL 的 MSCS 一点也不 research-based. 别忘了, 法语区文化 == 工程师文化. 这边非常鼓励/强迫你去工业界. EPFL 是有强制实习的. 还有十一连续数天的 career fair, 一整个学期的 career service 一步步指导… EPFL 给了条更容易获得欧洲工签的路, 让不少人其实是为了这些来的. 所以很难找到讨论科研的人… semester project 更多是个 project 给 phd 打下手, 写网页做 demo, 老师基本不认识你, 如果想做 research 可能需要一点决心吧.</p>
+<p>但是这里确实有 research 的机会, 还是看自己吧. 虽然 seminar 上得自闭, 但是能读 paper 开始有自己的想法了, 而且稍微不至于在 NLP 的浪潮中掉队太多. 虽然我一个 1st year master 并没有展现出任何能力, 但是也设法抱到了另一个组大佬的大腿, 并且学了些东西. 怎么说呢, 也得到了一些东西, 至少比在 XJTU 好太多了.</p>
+<h2 id="语言">语言</h2>
+<p>语言是我的主要 emo 来源. 我的英语有很大的障碍, 至今仍然听不懂别人在说什么, 也说不明白. 而且法语区街边的东西都是法语, 大家说的话大部分也都是法语, 我也很难练习, 相比之下在英国这一点就很好. 400 人的大课, 我只想去认识和我熟悉的人, 就变成和中国人一起了, 自然也练不了语言. 而且我本身挺自闭的, 不喜欢花大量时间去 social, 只要没有强制的 social, 我就更愿意把时间投到科研, 导致我的语言没法锻炼…</p>
+<p>其实应该是我的性格问题吧. 要么硬着头皮让自己变得 social 起来, 要么保持自我但是需要花更多时间刻意练习, 都做不到那语言就永远不会进步.</p>
+<h2 id="卷不过啊">卷不过啊</h2>
+<p>感觉反倒其他国家的人真的超级努力, 肝, 而且很强, 我自惭形秽. 不好卷.</p>
+<p>不过读到 master, 还卷吗? 有必要吗? 真的只有这一条路吗? 走到这儿了, 明明有很多路的.</p>
+<hr>
+<h2 id="结语">结语</h2>
+<p>EPFL 读下来很累, 每天都要上课写作业. 这里的科研和我想象的有差距, 目前并不算顺利. 这里的生活很无聊, 馆子少, 没啥可逛的, 也没什么游山玩水的时间和钱. 但是, 这里真正让我有了学到东西的成就感, 让我找到了科研和生活的动力. 还有美丽的湖景, 蓝白相间的山, 和快乐的火锅局, 饺子局, 让我觉得这边的生活其实也还不错~</p>
+<hr>
+<img alt="图 6" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/47bc94816560f1ba90b7cb274fb6a36ab73b6a5154bcbd83c5bbb824cd9d0420.png" srcset="/img/loading.gif" lazyload />
+<p>景色可以治愈人心~</p>
+<img alt="图 7" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/00c8bfd01d2c535c6331d160b81f3d0c68962cf4ff39db4695423c926ae8b091.png" srcset="/img/loading.gif" lazyload />
+<p>火锅爽吃~</p>
+<img alt="图 8" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/4f676dabfa74cf61e62a5104e8a4e0ec3af13ed3f8397ace5db4351303340769.png" srcset="/img/loading.gif" lazyload />
+<p>快乐饺子局~</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Essays/" class="category-chain-item">Essays</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Computer-Science/">#Computer Science</a>
+      
+        <a href="/tags/Master-Application/">#Master Application</a>
+      
+        <a href="/tags/Diary/">#Diary</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>EPFL MSCS First Semester Experience (in Chinese)</div>
+      <div>http://example.com/2022/12/30/2022-12-30-epfl-1st-semester/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Wind_like</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>December 30, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/01/2023-01-01-2022summary/" title="2022 Summary (In Chinese)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022 Summary (In Chinese)</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/10/2022-05-10-my-master-application/" title="My CS Master Application (in Chinese)">
+                        <span class="hidden-mobile">My CS Master Application (in Chinese)</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2022/12/30/2022-12-30-epfl-1st-semester/';
+          this.page.identifier = '/2022/12/30/2022-12-30-epfl-1st-semester/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('mermaid' in window) {
+        mermaid.init();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <link rel="stylesheet" href="https://npm.elemecdn.com/font-awesome/css/font-awesome.min.css"/>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br>竹杖芒鞋轻胜马 谁怕 一蓑烟雨任平生 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Number of visits 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Number of visitors 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/i18n-js@3.8.0/app/assets/javascripts/i18n.min.js"></script>
+<script src="/js/autoload.js"></script>
+<script src="https://npm.elemecdn.com/jquery/dist/jquery.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
