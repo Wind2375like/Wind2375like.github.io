@@ -18,26 +18,28 @@
   <meta name="author" content="Wind_like">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Document a workable solution for the annoying CUDA Out Of Memory (OOM)">
+    <meta name="description" content="Reading notes of Yao’s notes of How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources (notion.site).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Huggingface parallel training for solving the CUDA out of memory issue">
-<meta property="og:url" content="http://example.com/2023/02/12/2023-02-12-huggingface-parallel-training-solving-oom/index.html">
+<meta property="og:title" content="Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources*">
+<meta property="og:url" content="http://example.com/2023/02/19/2023-02-19-reading-notes-chatgpt/index.html">
 <meta property="og:site_name" content="Wind_like">
-<meta property="og:description" content="Document a workable solution for the annoying CUDA Out Of Memory (OOM)">
+<meta property="og:description" content="Reading notes of Yao’s notes of How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources (notion.site).">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/blogs/oom.jpg">
-<meta property="article:published_time" content="2023-02-12T22:37:32.000Z">
-<meta property="article:modified_time" content="2023-02-12T23:32:35.360Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/imgimage-20230218225348976.png">
+<meta property="article:published_time" content="2023-02-19T11:50:37.000Z">
+<meta property="article:modified_time" content="2023-02-19T11:52:50.631Z">
 <meta property="article:author" content="Wind_like">
-<meta property="article:tag" content="Tech Essays">
+<meta property="article:tag" content="Reading Notes">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="ChatGPT">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/blogs/oom.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/imgimage-20230218225348976.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Huggingface parallel training for solving the CUDA out of memory issue - Wind_like</title>
+  <title>Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources* - Wind_like</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Huggingface parallel training for solving the CUDA out of memory issue"></span>
+            <span id="subtitle" data-typed-text="Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources*"></span>
           
         </div>
 
@@ -210,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-12 23:37" pubdate>
-          Sunday, February 12th 2023, 11:37 pm
+        <time datetime="2023-02-19 12:50" pubdate>
+          Sunday, February 19th 2023, 12:50 pm
         </time>
       </span>
     
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          5.4k words
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          14 mins
+          45 mins
         
       </span>
     
@@ -271,40 +273,172 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Huggingface parallel training for solving the CUDA out of memory issue</h1>
+            <h1 style="display: none">Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources*</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Document a workable solution for the annoying CUDA Out Of Memory (OOM)</p>
+                <p>Reading notes of Yao’s notes of <a target="_blank" rel="noopener" href="https://yaofu.notion.site/How-does-GPT-Obtain-its-Ability-Tracing-Emergent-Abilities-of-Language-Models-to-their-Sources-b9a57ac0fcf74f30a1ab9e3e36fa1dc1">How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources (notion.site)</a>.</p>
 <span id="more"></span>
-<h2 id="Background">Background</h2>
-<p>I am running conditional text generation experiments these days on various seq2seq models. The script went well on other models except for the T5-large model. I continuously got the CUDA OOM error.</p>
-<p>The T5-large model is not so big and I’m running code on a server with 4 NVIDIA Corporation GP102s. Each one has 12G of video memory. It seems that I could run my code. However, even I set the batch size to 1 for each device, I got the CUDA OOM error.</p>
-<h2 id="Environment">Environment</h2>
-<p>My huggingface transformer version is <code>4.20.1</code> and my code looks like <a target="_blank" rel="noopener" href="https://github.com/huggingface/notebooks/blob/main/examples/summarization.ipynb">this</a> (<code>preprocess_function</code>, <code>dataset.map</code>, <code>trainer</code>).</p>
-<h2 id="Some-tries">Some tries</h2>
-<p>I followed the <a target="_blank" rel="noopener" href="https://github.com/huggingface/transformers/issues/9311">advice</a> and added <code>--fp16</code> and <code>--sharded_ddp</code> but neither of them work.</p>
-<h2 id="Solution">Solution</h2>
-<p><a target="_blank" rel="noopener" href="https://huggingface.co/docs/transformers/model_doc/t5#transformers.T5Model.parallelize">Parallelize</a></p>
-<p><code>( device_map = None )</code></p>
-<p>Parameters</p>
+<blockquote>
+<p>Keywords: code and instruction tuning; trade of between in-context learning and instruction tuning; unlock or inject the abilities; instruction-tuning, supervised instruction-tuning, and RLHF instruction-tuning; knowledge and reasoning.</p>
+</blockquote>
+<h2 id="Reference">Reference</h2>
+<blockquote>
+<p>Fu, Yao; Peng, Hao and Khot, Tushar. (Dec 2022). How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources. Yao Fu’s Notion. <a target="_blank" rel="noopener" href="https://yaofu.notion.site/How-does-GPT-Obtain-its-Ability-Tracing-Emergent-Abilities-of-Language-Models-to-their-Sources-b9a57ac0fcf74f30a1ab9e3e36fa1dc1">https://yaofu.notion.site/How-does-GPT-Obtain-its-Ability-Tracing-Emergent-Abilities-of-Language-Models-to-their-Sources-b9a57ac0fcf74f30a1ab9e3e36fa1dc1</a></p>
+</blockquote>
+<h2 id="Road-Map">Road Map</h2>
+<img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/imgimage-20230218225348976.png" srcset="/img/loading.gif" lazyload alt="image-20230218225348976"  />
+<p>Note: The base model for code-davinci-002 is highly likely not be the initial GPT-3 davinci model.</p>
+<h2 id="Summary">Summary</h2>
+<p>The authors’ conclusion:</p>
 <ul>
-<li><strong>device_map</strong> (<code>Dict[int, list]</code>, optional, defaults to None) — A dictionary that maps attention modules to devices. Note that the embedding module and LMHead are always automatically mapped to the first device (for esoteric reasons). That means that the first device should have fewer attention modules mapped to it than other devices. For reference, the t5 models have the following number of attention modules:
+<li>The <strong>language generation ability</strong> + <strong>basic world knowledge</strong> + <strong>in-context learning</strong> are from pretraining (<code>davinci</code>)</li>
+<li>The ability to <strong>store a large amount of ==knowledge==</strong> is from the 175B scale.</li>
+<li>The ability to <strong>follow instructions</strong> and <strong>generalizing to new tasks</strong> are from scaling instruction tuning (<code>davinci-instruct-beta</code>)</li>
+<li>The ability to perform <strong>complex ==reasoning==</strong> is likely to be from training on code (<code>code-davinci-002</code>)</li>
+<li>The ability to <strong>generate neutral, objective, safe, and informative answers</strong> are from alignment with human. Specifically:
 <ul>
-<li>t5-small: 6</li>
-<li>t5-base: 12</li>
-<li>t5-large: 24</li>
-<li>t5-3b: 24</li>
-<li>t5-11b: 24</li>
+<li>If supervised tuning, the resulting model is <code>text-davinci-002</code></li>
+<li>If RLHF, the resulting model is <code>text-davinci-003</code></li>
+<li>Either supervised or RLHF, the models cannot outperform <code>code-davinci-002</code> on many tasks, which is called the <em>alignment tax</em>. (RLHF on 003 just recovers the in-context learning ability.)</li>
+</ul>
+</li>
+<li>The <strong>dialog ability</strong> is also from RLHF (<code>ChatGPT</code>), specifically it tradeoffs in-context learning for:
+<ul>
+<li>Modeling dialog history</li>
+<li>Increased informativeness</li>
+<li>Rejecting questions outside the model’s knowledge scope</li>
 </ul>
 </li>
 </ul>
-<p>Uses a device map to distribute attention modules of the model across several devices. If no device map is given, it will evenly distribute blocks across all devices.</p>
-<p>Example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Here is an example of a device map on a machine with 4 GPUs using t5-3b, which has a total of 24 attention modules:</span><br>model = T5ForConditionalGeneration.from_pretrained(<span class="hljs-string">&quot;t5-3b&quot;</span>)<br>device_map = &#123;<br>    <span class="hljs-number">0</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>],<br>    <span class="hljs-number">1</span>: [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>],<br>    <span class="hljs-number">2</span>: [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">14</span>, <span class="hljs-number">15</span>, <span class="hljs-number">16</span>],<br>    <span class="hljs-number">3</span>: [<span class="hljs-number">17</span>, <span class="hljs-number">18</span>, <span class="hljs-number">19</span>, <span class="hljs-number">20</span>, <span class="hljs-number">21</span>, <span class="hljs-number">22</span>, <span class="hljs-number">23</span>],<br>&#125;<br>model.parallelize(device_map)<br></code></pre></td></tr></table></figure>
-<p>I just copy the code and replace “t5-3b” with “t5-large” and it works!</p>
-
+<table>
+<thead>
+<tr>
+<th>Ability</th>
+<th>OpenAI Model</th>
+<th>Training Method</th>
+<th>OpenAI API</th>
+<th>OpenAI Paper</th>
+<th>Open Source Approximate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-3 Series</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Generation  <br>+ World Knowledge  <br>+ In-context Learning</td>
+<td>GPT-3 Initial<br><br><strong>Many abilities already within this model, although superficially weak</strong></td>
+<td>Language Modeling</td>
+<td>Davinci</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2005.14165">GPT 3 Paper</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2205.01068">Meta OPT</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2211.05100">BLOOM</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2211.09085">Galactica</a></td>
+</tr>
+<tr>
+<td>+ Follow Human Instruction<br>+ Generalize to unseen task (free lunch of scaling instructions)</td>
+<td>Instruct-GPT initial</td>
+<td>Instruction Tuning</td>
+<td>Davinci-Instruct-Beta</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2203.02155">Instruct-GPT paper</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2110.08207">T0 paper</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2109.01652">Google FLAN paper</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.11416">Google FLAN paper</a></td>
+</tr>
+<tr>
+<td>+ Code Understanding<br>+ Code Generation</td>
+<td>Codex initial</td>
+<td>Training on Code</td>
+<td>Code-Cushman-001</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.03374">Codex Paper</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2203.13474">Salesforce CodeGen</a></td>
+</tr>
+<tr>
+<td>GPT-3.5 Series</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>++ Code Understanding<br>++ Code Generation<br>++ Complex Reasoning / Chain of Thought (<em>why</em>?)<br>+ Long-term dependency  (<em>probably</em>)</td>
+<td>Current Codex<br><br><strong>Strongest model in GPT3.5 Series</strong></td>
+<td>Training on text + code <br>Tuning on instructions</td>
+<td>Code-Davinci-002</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.03374">Codex Paper</a></td>
+<td>??</td>
+</tr>
+<tr>
+<td>++ Follow Human Instruction<br>- In-context learning<br>- Reasoning<br>++ Zero-shot generation</td>
+<td>Instruct-GPT supervised<br><br><strong>Trade in-context learning for zero-shot generation</strong></td>
+<td>Supervised instruction tuning</td>
+<td>Text-Davinci-002</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2203.02155">Instruct-GPT paper</a>, supervised part</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2110.08207">T0 paper</a><br/><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2109.01652">Google FLAN paper</a><br/><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.11416">Google FLAN paper</a></td>
+</tr>
+<tr>
+<td>+ Follow human value<br>+ More detailed generation<br>+ In-context learning<br>+ Zero-shot generation</td>
+<td>Instruct-GPT RLHF<br><br><strong>More aligned than 002, less performance loss</strong></td>
+<td>Instruction tuning w. RLHF</td>
+<td>Text-Davinci-003</td>
+<td>Instruct-GPT paper, RLHF part <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2009.01325">Summarization .w human feedback</a></td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2209.14375">DeepMind Sparrow paper</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.01241">AI2 RL4LMs</a></td>
+</tr>
+<tr>
+<td>++ Follow human value<br>++ More detailed generation<br>++ Reject questions beyond its knowledge (why?)<br>++ Model dialog context<br>– In-context learning</td>
+<td>ChatGPT<br><br><strong>Trade in-context learning for dialog history modeling</strong></td>
+<td>Tuning on dialog w. RLHF</td>
+<td>-</td>
+<td>-</td>
+<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2209.14375">DeepMind Sparrow paper</a><br/><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.01241">AI2 RL4LMs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Limitations">Limitations</h2>
+<ol>
+<li><strong>On-the-fly overwriting the model’s belief</strong>: when the model expresses its belief in something, it might be hard to correct it when the belief is wrong. There seems to be a hierarchy of how strong the belief is, which means that there exists a list of very strong core belief. ==<strong>It is extremely important to ensure such core belief should be absolutely 100% aligned with human.</strong>==</li>
+<li><strong>Formal reasoning</strong>: the GPT-3.5 series cannot do reasoning within formal, strict systems like math or first-order logic.
+<ol>
+<li>The word “reasoning” is less well-defined. Yet if we view there is a spectrum of ambiguity like (a) very ambiguous, no reasoning; (b) mixture of logic and ambiguous statements; ©. no ambiguity has to be very rigorous, then,</li>
+<li>The model can do very well on type (b) reasoning with ambiguity.</li>
+<li>The model cannot do type © reasoning, <strong>yet whether such reasoning should be done by a language model or a symbolic system is up for discussion.</strong></li>
+<li>Update: <a target="_blank" rel="noopener" href="https://writings.stephenwolfram.com/2023/01/wolframalpha-as-the-way-to-bring-computational-knowledge-superpowers-to-chatgpt/">Wolfram|Alpha as the Way to Bring Computational Knowledge Superpowers to ChatGPT—Stephen Wolfram Writings</a></li>
+</ol>
+</li>
+<li><strong>Retrieval from the Internet</strong>: the GPT-3.5 series cannot directly search the internet (for now)
+<ol>
+<li>Likely tested within OpenAI: <a target="_blank" rel="noopener" href="https://openai.com/blog/webgpt/">WebGPT: Improving the Factual Accuracy of Language Models through Web Browsing (openai.com)</a></li>
+<li><strong>Seperate the knowledge and reasoning</strong>: it would be ideal if we could offload the knowledge part to the outside retrieval system and let the language model only focus on reasoning.</li>
+<li><strong>Combining LLMs (reasoning) and search (knowledge) is a good direction</strong>: LLMs are good for reasoning, not for knowledge. The knowledge within LLMs are unreliable and cannot be verified. On the other hand, the knowledge from search engine is orders or magnitude larger than LLM’s internal knowledge, can one can easily verify credibility of search results by checking the source.
+<ol>
+<li>Retrieval-augmented models?</li>
+<li>Reduce the model size? (175B storing unreliable knowledge -&gt; search engines)</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Questions-to-be-answered">Questions to be answered</h2>
+<ol>
+<li>How does the GPT-3.5 acquire the reasoning ability (CoT)? (Likely because of code training according to the authors).</li>
+<li>Which kinds of abilities are unlocked/injected by what means<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote">&lt;span class=“hint–top hint–rounded” aria-label=““by what means” is hypothesized in the <a href="##summary">summary</a> section but some of them are not proved.”&gt;[1]</span></a></sup>? The authors’ hypothesis (according to scale):
+<ol>
+<li>Abilities from code training: injection</li>
+<li>Abilities from instruction tuning: unlock</li>
+</ol>
+</li>
+</ol>
+<h2 id="What-I-need-to-further-know-about">What I need to further know about</h2>
+<ul>
+<li>instruction-tuning? supervised instruction-tuning? RLHF instruction-tuning?</li>
+<li>code training?</li>
+</ul>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>“by what means” is hypothesized in the <a href="##summary">summary</a> section but some of them are not proved.
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
@@ -322,8 +456,22 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Tech-Essays/" class="category-chain-item">Tech Essays</a>
+  <a href="/categories/Reading-Notes/" class="category-chain-item">Reading Notes</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/Reading-Notes/NLP/" class="category-chain-item">NLP</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Reading-Notes/NLP/ChatGPT/" class="category-chain-item">ChatGPT</a>
+  
+  
+
+  
+
   
 
       </span>
@@ -337,7 +485,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Tech-Essays/">#Tech Essays</a>
+        <a href="/tags/Reading-Notes/">#Reading Notes</a>
+      
+        <a href="/tags/NLP/">#NLP</a>
+      
+        <a href="/tags/ChatGPT/">#ChatGPT</a>
       
     </div>
   
@@ -349,8 +501,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Huggingface parallel training for solving the CUDA out of memory issue</div>
-      <div>http://example.com/2023/02/12/2023-02-12-huggingface-parallel-training-solving-oom/</div>
+      <div>Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources*</div>
+      <div>http://example.com/2023/02/19/2023-02-19-reading-notes-chatgpt/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +514,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>February 12, 2023</div>
+          <div>February 19, 2023</div>
         </div>
       
       
@@ -394,18 +546,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/19/2023-02-19-reading-notes-chatgpt/" title="Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources*">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Reading Notes of *How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources*</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/08/2023-02-08-time-zone/" title="You are very much ON TIME">
-                        <span class="hidden-mobile">You are very much ON TIME</span>
+                      <a href="/2023/02/12/2023-02-12-huggingface-parallel-training-solving-oom/" title="Huggingface parallel training for solving the CUDA out of memory issue">
+                        <span class="hidden-mobile">Huggingface parallel training for solving the CUDA out of memory issue</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -425,8 +571,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://example.com/2023/02/12/2023-02-12-huggingface-parallel-training-solving-oom/';
-          this.page.identifier = '/2023/02/12/2023-02-12-huggingface-parallel-training-solving-oom/';
+          this.page.url = 'http://example.com/2023/02/19/2023-02-19-reading-notes-chatgpt/';
+          this.page.identifier = '/2023/02/19/2023-02-19-reading-notes-chatgpt/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
