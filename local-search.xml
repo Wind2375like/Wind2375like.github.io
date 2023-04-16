@@ -8,7 +8,7 @@
     <link href="/2023/04/14/2023-04-14-how-to-block-a-website/"/>
     <url>/2023/04/14/2023-04-14-how-to-block-a-website/</url>
     
-    <content type="html"><![CDATA[<p>Some websites are really distracting!</p><span id="more"></span><p>OS: Windows 11.</p><ol><li>Edit the hosts file:<br>a. Press <code>Win + S</code> to open the search bar.<br>b. Type “Notepad” in the search bar.<br>c. Right-click on “Notepad” in the search results and select “Run as administrator.”<br>d. Click “Yes” if prompted by the User Account Control.<br>e. In Notepad, click “File” &gt; “Open.”<br>f. Navigate to <code>C:\Windows\System32\drivers\etc</code> and change the “Text Documents” dropdown to “All Files” in the bottom right corner.<br>g. Open the “hosts” file.<br>h. At the end of the file, add the following lines:</li></ol><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span> www.bilibili.com<br><span class="hljs-number">127.0.0.1</span> bilibili.com<br></code></pre></td></tr></table></figure><p>i. Save the changes by clicking “File” &gt; “Save” and then close Notepad.</p><ol start="2"><li>Encrypt the hosts file with a password:<br>a. Download the Wise Folder Hider <a href="https://www.wisecleaner.com/wise-folder-hider.html">https://www.wisecleaner.com/wise-folder-hider.html</a>.<br>b. Generate a random password with use online password generators like <a href="https://passwordsgenerator.net/">https://passwordsgenerator.net/</a>.<br>c. Set the password of the Wise Folder with the one generated above.<br>d. Hide and encrypt the folder <code>C:\Windows\System32\drivers\etc</code> with the password generated above.<br>e. Write down the password on a piece of paper and lock it elsewhere, far from where you usually stay, or <strong>directly throw it into Lake Geneva!</strong></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>Some websites are really distracting!</p><span id="more"></span><p>The method is totally not helpful at all! I don’t know why the Edge Browser could bypass the hosts file even I cleared the cache of the browser and DNS and restarted my computer. This way only worked for a little while but then the block didn’t work!</p><p>Now I spent 35CHF for the software Cold Turkey to block these websites…</p><hr><p>(Obsoleted)</p><p>OS: Windows 11.</p><ol><li>Edit the hosts file:<br>a. Press <code>Win + S</code> to open the search bar.<br>b. Type “Notepad” in the search bar.<br>c. Right-click on “Notepad” in the search results and select “Run as administrator.”<br>d. Click “Yes” if prompted by the User Account Control.<br>e. In Notepad, click “File” &gt; “Open.”<br>f. Navigate to <code>C:\Windows\System32\drivers\etc</code> and change the “Text Documents” dropdown to “All Files” in the bottom right corner.<br>g. Open the “hosts” file.<br>h. At the end of the file, add the following lines:</li></ol><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span> www.bilibili.com<br><span class="hljs-number">127.0.0.1</span> bilibili.com<br></code></pre></td></tr></table></figure><p>i. Save the changes by clicking “File” &gt; “Save” and then close Notepad.</p><ol start="2"><li>Encrypt the hosts file with a password:<br>a. Download the Wise Folder Hider <a href="https://www.wisecleaner.com/wise-folder-hider.html">https://www.wisecleaner.com/wise-folder-hider.html</a>.<br>b. Generate a random password with use online password generators like <a href="https://passwordsgenerator.net/">https://passwordsgenerator.net/</a>.<br>c. Set the password of the Wise Folder with the one generated above.<br>d. Hide and encrypt the folder <code>C:\Windows\System32\drivers\etc</code> with the password generated above.<br>e. Write down the password on a piece of paper and lock it elsewhere, far from where you usually stay, or <strong>directly throw it into Lake Geneva!</strong></li></ol>]]></content>
     
     
     <categories>
@@ -246,9 +246,9 @@
       
       <tag>Computer Science</tag>
       
-      <tag>Master Application</tag>
-      
       <tag>Diary</tag>
+      
+      <tag>Master Application</tag>
       
     </tags>
     
@@ -275,9 +275,9 @@
       
       <tag>Computer Science</tag>
       
-      <tag>Diary</tag>
-      
       <tag>Master Life</tag>
+      
+      <tag>Diary</tag>
       
     </tags>
     
