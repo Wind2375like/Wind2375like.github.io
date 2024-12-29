@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2024 Summary (In Chinese)</title>
+    <link href="/2024/12/30/2024-12-30-2024summary/"/>
+    <url>/2024/12/30/2024-12-30-2024summary/</url>
+    
+    <content type="html"><![CDATA[<p>一篇没人能看见的 2024 年的总结.</p><span id="more"></span><blockquote><p>The moon is hanging high<br>With her lonely stars behind<br>The moonlight lits the ground<br>And the moonlight gives me a chill<br>But only the moonlight will show me my way<br>Nobody’ll help but what else can I do<br>Oh lord I need your help<br>In the sky there’s a eagle soaring by<br>Oh long way without friends<br>But I’ll never change my mind</p></blockquote><p>可能没有任何一个人能看到这篇. 其实这个东西不应该发出来让人看到的, 但我心里很强的分享欲还是想让我发出来, 索性发到这个不知名的 blog 里吧, 不知道谁会看.</p><p>今年是很动荡的一年, 虽然我感谢这些动荡带给我的变化, 但是这些痛苦和不安时常像噩梦一样侵蚀我. 好在我知道自己要做什么, 我知道我不是按部就班完成工作的人, 我开始学习如何统筹规划, 如何应对突如其来的变化, 如何 focus on next actions to <a href="https://gettingthingsdone.com/">get things done (GTD)</a>, 从而让自己能坚定地执行一些事情. 希望下一年能更加坚定地执行自己的计划吧, 让 P 更 J 一点, F 更 T 一点 (I 和 N 是变不了一点了). 明年要 secure phd position, 在美国开启新的 journey, 要 publish 自己的工作, 还想着开发一个 gpt-based grammar checker, 最重要的是, 要有自己的学习流和工作流.</p><p>今年也是很孤独的一年. 去年:</p><blockquote><p>因为很多 loose relations 可以形成一个很强的连接. 而且那时候有很多杂事要做, 我被麻木了, 还没有感觉. 但是来到本身没多少人的地方, 这种连接就格外脆弱. 而且没有那么多杂事要做, 一旦我停下来 research, 停下来做事, 这种孤独感就会袭来, 工作就不敢停下来, 一旦停下来必须马上通过娱乐来麻痹自己, 不知道怎样才能更好地消解孤独.</p></blockquote><p>今年身边的朋友一个个都开始新的旅途了, 我们彼此就像南方高速里通车的公路一样, 大家开向了不同的方向, 再也回不去了, 于是连 loose connection 索性都没有了. 就算还在, 我也不能依赖于他人为我提供情绪上的支持或者完成一些事情, 首先其他人没有义务帮我, 其次我和其他人总会有一些方面的利益并没有达成一致, 每个人都是自私的, 我不能沿着任何一个人为我铺好的路就无限地走下去, 因为反而会阻碍我的成长, 有些决定要自己做, 后果也要自己承受. 此外下半年的实习也让我意识到英文沟通对我仍然有无尽的障碍, 更加加剧了我的孤独. 对爱情的向往但是对结果的过于看重让我放弃一切可能性, 算是对孤独的火上浇油.</p><p>今年也是非常不健康的一年. 从下半年开始, 身体和心灵的健康都出现了磨损, 体重和坏习惯 <span class="heimu" title="你知道的太多了">(包括 H-related)</span> 暴增, 好在我发现健身 (增加有氧, 代谢) 对精神和身体状态提升的帮助, 现在开始亡羊补牢, 希望还能来得及. 2025 年, 我 25 岁, 身体开始从顶峰下落, 只能通过锻炼的方式, 让自己的下坠方式慢一点. 25 年, 坚持健身, <span class="heimu" title="你知道的太多了">戒 H-related stuff (比如什么 t 开头的蓝白软件和什么 p 开头的红色漫画软件, 尤其那种纯爱的简直要把脑袋看坏了)</span>, 戒一切通过推荐算法推荐信息的 app <span class="heimu" title="你知道的太多了">(比如bilibili, redbook, youtube, 好家伙全是红色的)</span>, GTD.</p><p><span class="heimu" title="你知道的太多了">其实上面的东西没什么不好意思的, 真正是第二段的内容只能当谜语人了, 不敢说不知道怎么办只能自己尝试处理…</span></p><hr><p>24 的心情比 23 年更加糟, 希望 2025 会更好吧.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Annual Summary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Diary</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2023 Summary (In Chinese)</title>
     <link href="/2024/01/01/2024-01-01-2023summary/"/>
     <url>/2024/01/01/2024-01-01-2023summary/</url>
@@ -356,17 +381,6 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[.heimu {    background-color: #000;    color: #000;}.navbar {    background:rgba(0,0,0,.2);    backdrop-filter: blur(7px);}body {    background-color: rgba(252, 248, 234, 1);}#board {    background: url("/img/saber_background.jpg") center/cover no-repeat fixed;}<div id="waifu" style="bottom: 0px; z-index: 999">    <div id="waifu-tips" class="waifu-tips-active">Hey! How long have you been <br>ignoring me~~</div>    <canvas id="live2d" width="800" height="800"></canvas>    <div id="waifu-tool">        <span class="fa fa-lg fa-comment"></span>        <span class="fa fa-lg fa-paper-plane"></span>        <span class="fa fa-lg fa-user-circle"></span>        <span class="fa fa-lg fa-street-view"></span>        <span class="fa fa-lg fa-camera-retro"></span>        <span class="fa fa-lg fa-info-circle"></span>        <span class="fa fa-lg fa-times"></span>    </div></div>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[I18n.defaultLocale = "en-US";I18n.locale = "en-US";I18n.translations = {};fetch("/live2d/i18n.json").then(res => res.json()).then(data => {    Object.keys(data).forEach(key => {        console.log("key", key)        I18n.translations[key] = data[key];    })});// live2d_path 参数建议使用绝对路径// const live2d_path = "https://cdn.jsdelivr.net/gh/Wind-2375-like/Wind-2375-like.github.io/";const live2d_path = "/live2d/";// 封装异步加载资源的方法function loadExternalResource(url, type) {return new Promise((resolve, reject) => {let tag;if (type === "css") {tag = document.createElement("link");tag.rel = "stylesheet";tag.href = url;}else if (type === "js") {tag = document.createElement("script");tag.src = url;}if (tag) {tag.onload = () => resolve(url);tag.onerror = () => reject(url);document.head.appendChild(tag);}});}// 加载 waifu.css live2d.min.js waifu-tips.jsif (screen.width >= 768) {Promise.all([loadExternalResource(live2d_path + "waifu.css", "css"),loadExternalResource(live2d_path + "live2d.min.js", "js"),loadExternalResource(live2d_path + "waifu-tips.js", "js")]).then(() => {// 配置选项的具体用法见 README.mdinitWidget({waifuPath: live2d_path + "waifu-tips.json",apiPath: "https://api.zsq.im/live2d/",// cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]});});}console.log(`  く__,.ヘヽ.        /  ,ー､ 〉           ＼ ', !-─‐-i  /  /´           ／｀ｰ'       L/／｀ヽ､         /   ／,   /|   ,   ,       ',       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |          !,/7 '0'     ´0iソ|    |          |.从"    _     ,,,, / |./    |          ﾚ'| i＞.､,,__  _,.イ /   .i   |            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |              | |/i 〈|/   i  ,.ﾍ |  i  |             .|/ /  ｉ：    ﾍ!    ＼  |              kヽ>､ﾊ    _,.ﾍ､    /､!              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'              ﾚ'ヽL__|___i,___,ンﾚ|ノ                  ﾄ-,/  |___./                  'ｰ'    !_,.:`);]]></content>
     
   </entry>
@@ -412,6 +426,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[#waifu-toggle {background-color: #fa0;border-radius: 5px;bottom: 66px;color: #fff;cursor: pointer;font-size: 12px;left: 0;margin-left: -100px;padding: 5px 2px 5px 5px;position: fixed;transition: margin-left 1s;width: 60px;    z-index: 1;writing-mode: vertical-rl;}#waifu-toggle.waifu-toggle-active {margin-left: -50px;}#waifu-toggle.waifu-toggle-active:hover {margin-left: -30px;}#waifu {bottom: -1000px;left: 0;line-height: 0;margin-bottom: -10px;position: fixed;transform: translateY(3px);transition: transform .3s ease-in-out, bottom 3s ease-in-out;z-index: 999;}#waifu:hover {transform: translateY(0);}#waifu-tips {animation: shake 50s ease-in-out 5s infinite;background-color: rgba(252, 246, 229, 1);border: 1px solid rgba(224, 186, 140, .62);border-radius: 12px;box-shadow: 0 3px 15px 2px rgba(191, 158, 118, .2);font-size: 14px;line-height: 24px;margin: -30px 20px;min-height: 70px;opacity: 0;overflow: hidden;padding: 5px 10px;position: absolute;text-overflow: ellipsis;transition: opacity 1s;width: 250px;word-break: break-all;}#waifu-tips.waifu-tips-active {opacity: 1;transition: opacity .2s;}#waifu-tips span {color: #0099cc;}#waifu #live2d {cursor: grab;height: 300px;position: relative;width: 300px;}#waifu #live2d:active {cursor: grabbing;}#waifu-tool {color: #aaa;opacity: 0;position: absolute;right: -10px;top: 70px;transition: opacity 1s;}#waifu:hover #waifu-tool {opacity: 1;}#waifu-tool span {color: #7b8c9d;cursor: pointer;display: block;line-height: 30px;text-align: center;transition: color .3s;}#waifu-tool span:hover {color: #0684bd; /* #34495e */}@keyframes shake {2% {transform: translate(.5px, -1.5px) rotate(-.5deg);}4% {transform: translate(.5px, 1.5px) rotate(1.5deg);}6% {transform: translate(1.5px, 1.5px) rotate(1.5deg);}8% {transform: translate(2.5px, 1.5px) rotate(.5deg);}10% {transform: translate(.5px, 2.5px) rotate(.5deg);}12% {transform: translate(1.5px, 1.5px) rotate(.5deg);}14% {transform: translate(.5px, .5px) rotate(.5deg);}16% {transform: translate(-1.5px, -.5px) rotate(1.5deg);}18% {transform: translate(.5px, .5px) rotate(1.5deg);}20% {transform: translate(2.5px, 2.5px) rotate(1.5deg);}22% {transform: translate(.5px, -1.5px) rotate(1.5deg);}24% {transform: translate(-1.5px, 1.5px) rotate(-.5deg);}26% {transform: translate(1.5px, .5px) rotate(1.5deg);}28% {transform: translate(-.5px, -.5px) rotate(-.5deg);}30% {transform: translate(1.5px, -.5px) rotate(-.5deg);}32% {transform: translate(2.5px, -1.5px) rotate(1.5deg);}34% {transform: translate(2.5px, 2.5px) rotate(-.5deg);}36% {transform: translate(.5px, -1.5px) rotate(.5deg);}38% {transform: translate(2.5px, -.5px) rotate(-.5deg);}40% {transform: translate(-.5px, 2.5px) rotate(.5deg);}42% {transform: translate(-1.5px, 2.5px) rotate(.5deg);}44% {transform: translate(-1.5px, 1.5px) rotate(.5deg);}46% {transform: translate(1.5px, -.5px) rotate(-.5deg);}48% {transform: translate(2.5px, -.5px) rotate(.5deg);}50% {transform: translate(-1.5px, 1.5px) rotate(.5deg);}52% {transform: translate(-.5px, 1.5px) rotate(.5deg);}54% {transform: translate(-1.5px, 1.5px) rotate(.5deg);}56% {transform: translate(.5px, 2.5px) rotate(1.5deg);}58% {transform: translate(2.5px, 2.5px) rotate(.5deg);}60% {transform: translate(2.5px, -1.5px) rotate(1.5deg);}62% {transform: translate(-1.5px, .5px) rotate(1.5deg);}64% {transform: translate(-1.5px, 1.5px) rotate(1.5deg);}66% {transform: translate(.5px, 2.5px) rotate(1.5deg);}68% {transform: translate(2.5px, -1.5px) rotate(1.5deg);}70% {transform: translate(2.5px, 2.5px) rotate(.5deg);}72% {transform: translate(-.5px, -1.5px) rotate(1.5deg);}74% {transform: translate(-1.5px, 2.5px) rotate(1.5deg);}76% {transform: translate(-1.5px, 2.5px) rotate(1.5deg);}78% {transform: translate(-1.5px, 2.5px) rotate(.5deg);}80% {transform: translate(-1.5px, .5px) rotate(-.5deg);}82% {transform: translate(-1.5px, .5px) rotate(-.5deg);}84% {transform: translate(-.5px, .5px) rotate(1.5deg);}86% {transform: translate(2.5px, 1.5px) rotate(.5deg);}88% {transform: translate(-1.5px, .5px) rotate(1.5deg);}90% {transform: translate(-1.5px, -.5px) rotate(-.5deg);}92% {transform: translate(-1.5px, -1.5px) rotate(1.5deg);}94% {transform: translate(.5px, .5px) rotate(-.5deg);}96% {transform: translate(2.5px, -.5px) rotate(-.5deg);}98% {transform: translate(-1.5px, -1.5px) rotate(-.5deg);}0%, 100% {transform: translate(0, 0) rotate(0);}}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[.heimu {    background-color: #000;    color: #000;}.navbar {    background:rgba(0,0,0,.2);    backdrop-filter: blur(7px);}body {    background-color: rgba(252, 248, 234, 1);}#board {    background: url("/img/saber_background.jpg") center/cover no-repeat fixed;}<div id="waifu" style="bottom: 0px; z-index: 999">    <div id="waifu-tips" class="waifu-tips-active">Hey! How long have you been <br>ignoring me~~</div>    <canvas id="live2d" width="800" height="800"></canvas>    <div id="waifu-tool">        <span class="fa fa-lg fa-comment"></span>        <span class="fa fa-lg fa-paper-plane"></span>        <span class="fa fa-lg fa-user-circle"></span>        <span class="fa fa-lg fa-street-view"></span>        <span class="fa fa-lg fa-camera-retro"></span>        <span class="fa fa-lg fa-info-circle"></span>        <span class="fa fa-lg fa-times"></span>    </div></div>]]></content>
     
   </entry>
   
