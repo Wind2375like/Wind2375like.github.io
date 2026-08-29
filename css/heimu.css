@@ -1,0 +1,30 @@
+.heimu {
+    background-color: #000;
+    color: #000;
+}
+
+.navbar {
+    background:rgba(0,0,0,.2);
+    backdrop-filter: blur(7px);}
+
+body {
+    background-color: rgba(252, 248, 234, 1);
+}
+
+#board {
+    background: url("/img/saber_background.jpg") center/cover no-repeat fixed;
+}
+
+<div id="waifu" style="bottom: 0px; z-index: 999">
+    <div id="waifu-tips" class="waifu-tips-active">Hey! How long have you been <br>ignoring me~~</div>
+    <canvas id="live2d" width="800" height="800"></canvas>
+    <div id="waifu-tool">
+        <span class="fa fa-lg fa-comment"></span>
+        <span class="fa fa-lg fa-paper-plane"></span>
+        <span class="fa fa-lg fa-user-circle"></span>
+        <span class="fa fa-lg fa-street-view"></span>
+        <span class="fa fa-lg fa-camera-retro"></span>
+        <span class="fa fa-lg fa-info-circle"></span>
+        <span class="fa fa-lg fa-times"></span>
+    </div>
+</div>
