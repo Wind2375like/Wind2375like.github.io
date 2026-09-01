@@ -9,38 +9,33 @@
     backdrop-filter: blur(7px);
 }
 
-/* == saber 整页背景 (board 与两侧一致) ==
-   用固定定位的伪元素铺满整个视口, 内容和面板都浮在它上面,
-   所以中间的 board 和两侧看到的是同一张连续的图.
-   opacity 就是透明度旋钮: 1 = 最清晰, 0 = 完全看不见.
-   注意图片用的是 saber_bg.jpg, 它是把原图 saber_background.jpg
-   逐通道拉伸对比度后的版本 (原图标准差只有 4/255, 几乎是一片平色,
-   所以以前不管怎么调都显示不出来). 原图保留未改动. */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    background-image: url("/img/saber_bg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: .7;
+/* == saber 背景: board 与两侧共用同一张图 ==
+
+   旋钮在这里. 1 = 最清晰, 0 = 完全看不见, 中间随便取小数.
+   原理: 下面用它算出一层米色遮罩的透明度 (1 - 清晰度) 盖在图上,
+   数值越大遮罩越薄, saber 越清楚. */
+:root {
+    --saber-strength: .7;
 }
 
-/* 伪元素半透明时, 透出来的底色 */
-body {
-    background-color: rgb(252, 248, 234);
-}
-
-/* 主面板不自带底色, 与两侧完全一致;
-   边界由主题原有的圆角 (.5rem) 和阴影提供 */
+/* body 和 #board 用完全相同的一组背景属性.
+   关键是 background-attachment: fixed  ->  两者都以"视口"为定位基准,
+   所以中间面板里的那块图和两侧的图严丝合缝, 看上去是连续的一整张.
+   同时 #board 有自己不透明的底色和图, 不会再透出后面的深色 banner,
+   顶部压在 banner 上的那几行字就不会糊了. */
+body,
 #board {
-    background-color: transparent !important;
+    background-color: rgb(252, 248, 234) !important;
+    background-image:
+        linear-gradient(
+            rgba(252, 248, 234, calc(1 - var(--saber-strength))),
+            rgba(252, 248, 234, calc(1 - var(--saber-strength)))
+        ),
+        url("/img/saber_bg.jpg") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 /* == 表格背景透明 ==
