@@ -1,20 +1,87 @@
+/* == 原有: 黑幕 / 导航栏 == */
 .heimu {
     background-color: #000;
     color: #000;
 }
 
 .navbar {
-    background:rgba(0,0,0,.2);
-    backdrop-filter: blur(7px);}
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(7px);
+}
 
+/* == saber 背景铺满整页 ==
+   原先 saber 只贴在 #board (中间面板) 上, 两侧和底部露出纯色 body 背景.
+   现在移到 body: fixed + cover 以视口为基准铺满, 中间与两侧连成一整张图.
+   叠一层米色半透明使其比原来更淡, 数值越大越淡 (0 = 原图, 1 = 纯米色). */
 body {
-    background-color: rgba(252, 248, 234, 1);
+    background-color: rgb(252, 248, 234);
+    background-image:
+        linear-gradient(rgba(252, 248, 234, .5), rgba(252, 248, 234, .5)),
+        url("/img/saber_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+/* 主面板透明, 让底下的 saber 透上来 */
 #board {
-    background: url("/img/saber_background.jpg") center/cover no-repeat fixed;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
+/* == 表格背景透明 ==
+   主题默认给 tr 和偶数行都填了 --board-bg-color (#fff), 会挡住背景 */
+.markdown-body table,
+.markdown-body table thead,
+.markdown-body table tbody,
+.markdown-body table tr,
+.markdown-body table tr:nth-child(2n),
+.markdown-body table th,
+.markdown-body table td {
+    background-color: transparent !important;
+}
+
+/* == 代码块背景透明 ==
+   主题用 --highlight-bg-color, highlight.css 里 .hljs 还硬编码了 #fdf6e3 */
+.markdown-body .hljs,
+.markdown-body .highlight,
+.markdown-body .highlight pre,
+.markdown-body .code-wrapper,
+.markdown-body .code-wrapper pre,
+.markdown-body figure.highlight,
+.markdown-body figure.highlight pre,
+.markdown-body figure.highlight td.gutter,
+.markdown-body figure.highlight td.code,
+.markdown-body pre,
+.markdown-body pre code,
+.markdown-body code {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* == mermaid 流程图背景透明 == */
+.markdown-body code.mermaid,
+.markdown-body pre code.mermaid,
+.markdown-body .mermaid {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.markdown-body code.mermaid svg,
+.markdown-body .mermaid svg,
+.markdown-body svg[id^="mermaid"] {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* mermaid 在 SVG 内联样式里画的底色矩形 */
+.markdown-body svg[id^="mermaid"] > rect:first-child,
+.markdown-body code.mermaid svg > rect:first-child {
+    fill: transparent !important;
+}
+
+/* == 备忘: live2d 挂件的 HTML 片段 (非样式, 仅存档) ==
 <div id="waifu" style="bottom: 0px; z-index: 999">
     <div id="waifu-tips" class="waifu-tips-active">Hey! How long have you been <br>ignoring me~~</div>
     <canvas id="live2d" width="800" height="800"></canvas>
@@ -28,3 +95,4 @@ body {
         <span class="fa fa-lg fa-times"></span>
     </div>
 </div>
+   == 存档结束 == */
