@@ -12,11 +12,12 @@
 /* == saber 背景铺满整页 ==
    原先 saber 只贴在 #board (中间面板) 上, 两侧和底部露出纯色 body 背景.
    现在移到 body: fixed + cover 以视口为基准铺满, 中间与两侧连成一整张图.
-   叠一层米色半透明使其比原来更淡, 数值越大越淡 (0 = 原图, 1 = 纯米色). */
+   这里不再叠遮罩, 保持 saber 原本的浓度. 想调淡就把下面 linear-gradient
+   那两行的注释去掉, 数值越大越淡. */
 body {
     background-color: rgb(252, 248, 234);
     background-image:
-        linear-gradient(rgba(252, 248, 234, .5), rgba(252, 248, 234, .5)),
+        /* linear-gradient(rgba(252, 248, 234, .35), rgba(252, 248, 234, .35)), */
         url("/img/saber_background.jpg");
     background-position: center;
     background-size: cover;
@@ -24,10 +25,10 @@ body {
     background-attachment: fixed;
 }
 
-/* 主面板透明, 让底下的 saber 透上来 */
+/* 主面板半透明: 既保留面板底色和边界 (圆角 + 阴影由主题提供), 又能透出 saber.
+   数值越大面板越实, 越小 saber 透得越多. */
 #board {
-    background: transparent !important;
-    box-shadow: none !important;
+    background-color: rgba(255, 255, 255, .7) !important;
 }
 
 /* == 表格背景透明 ==
