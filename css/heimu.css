@@ -15,7 +15,7 @@
    原理: 下面用它算出一层米色遮罩的透明度 (1 - 清晰度) 盖在图上,
    数值越大遮罩越薄, saber 越清楚. */
 :root {
-    --saber-strength: .7;
+    --saber-strength: .2375;
 }
 
 /* body 和 #board 用完全相同的一组背景属性.
