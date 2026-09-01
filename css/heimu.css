@@ -9,26 +9,38 @@
     backdrop-filter: blur(7px);
 }
 
-/* == saber 背景铺满整页 ==
-   原先 saber 只贴在 #board (中间面板) 上, 两侧和底部露出纯色 body 背景.
-   现在移到 body: fixed + cover 以视口为基准铺满, 中间与两侧连成一整张图.
-   这里不再叠遮罩, 保持 saber 原本的浓度. 想调淡就把下面 linear-gradient
-   那两行的注释去掉, 数值越大越淡. */
-body {
-    background-color: rgb(252, 248, 234);
-    background-image:
-        /* linear-gradient(rgba(252, 248, 234, .35), rgba(252, 248, 234, .35)), */
-        url("/img/saber_background.jpg");
+/* == saber 整页背景 (board 与两侧一致) ==
+   用固定定位的伪元素铺满整个视口, 内容和面板都浮在它上面,
+   所以中间的 board 和两侧看到的是同一张连续的图.
+   opacity 就是透明度旋钮: 1 = 最清晰, 0 = 完全看不见.
+   注意图片用的是 saber_bg.jpg, 它是把原图 saber_background.jpg
+   逐通道拉伸对比度后的版本 (原图标准差只有 4/255, 几乎是一片平色,
+   所以以前不管怎么调都显示不出来). 原图保留未改动. */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("/img/saber_bg.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    opacity: .7;
 }
 
-/* 主面板半透明: 既保留面板底色和边界 (圆角 + 阴影由主题提供), 又能透出 saber.
-   数值越大面板越实, 越小 saber 透得越多. */
+/* 伪元素半透明时, 透出来的底色 */
+body {
+    background-color: rgb(252, 248, 234);
+}
+
+/* 主面板不自带底色, 与两侧完全一致;
+   边界由主题原有的圆角 (.5rem) 和阴影提供 */
 #board {
-    background-color: rgba(255, 255, 255, .7) !important;
+    background-color: transparent !important;
 }
 
 /* == 表格背景透明 ==
