@@ -18,18 +18,20 @@
   <meta name="author" content="Wind_like">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Motivation. Consider simulating an M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1 queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate X∼Exp(λ)X \sim \text{Exp}">
+    <meta name="description" content="Every random variate in a simulation is built from i.i.d. U(0,1) numbers; these notes cover where those numbers come from and what makes a generator good.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3. Random Number Generation">
-<meta property="og:url" content="http://example.com/2026/09/08/random-number-generation/index.html">
+<meta property="og:url" content="http://example.com/2026/09/08/2026-09-08-random-number-generation/index.html">
 <meta property="og:site_name" content="Wind_like">
-<meta property="og:description" content="Motivation. Consider simulating an M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1 queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate X∼Exp(λ)X \sim \text{Exp}">
+<meta property="og:description" content="Every random variate in a simulation is built from i.i.d. U(0,1) numbers; these notes cover where those numbers come from and what makes a generator good.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/blogs/simulation-modeling.png">
 <meta property="article:published_time" content="2026-09-09T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-09-09T04:41:33.943Z">
+<meta property="article:modified_time" content="2026-09-09T05:05:39.463Z">
 <meta property="article:author" content="Wind_like">
 <meta property="article:tag" content="Simulation Modeling">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/blogs/simulation-modeling.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k words
+          3.5k words
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          29 mins
+          30 mins
         
       </span>
     
@@ -276,7 +278,9 @@
             
               <div class="markdown-body">
                 
-                <p><strong>Motivation.</strong> Consider simulating an <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi mathvariant="normal">/</mi><mi>M</mi><mi mathvariant="normal">/</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">M/M/1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/1</span></span></span></span> queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mtext>Exp</mtext><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X \sim \text{Exp}(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Exp</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span>, whose c.d.f. is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">F(x) = 1 - e^{-\lambda x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x \ge 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. This can be done from a single uniform random number:</p>
+                <p>Every random variate in a simulation is built from i.i.d. U(0,1) numbers; these notes cover where those numbers come from and what makes a generator good.</p>
+<span id="more"></span>
+<p><strong>Motivation.</strong> Consider simulating an <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi mathvariant="normal">/</mi><mi>M</mi><mi mathvariant="normal">/</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">M/M/1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/1</span></span></span></span> queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mtext>Exp</mtext><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X \sim \text{Exp}(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Exp</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span>, whose c.d.f. is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">F(x) = 1 - e^{-\lambda x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x \ge 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. This can be done from a single uniform random number:</p>
 <ol>
 <li>Generate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∼</mo><mi>U</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">U \sim U(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>.</li>
 <li>Return <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo>−</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mn>1</mn><mi>λ</mi></mfrac></mstyle><mi>ln</mi><mo>⁡</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">X = -\dfrac{1}{\lambda}\ln U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">λ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">U</span></span></span></span>.</li>
@@ -401,7 +405,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <div class="license-box my-3">
     <div class="license-title">
       <div>3. Random Number Generation</div>
-      <div>http://example.com/2026/09/08/random-number-generation/</div>
+      <div>http://example.com/2026/09/08/2026-09-08-random-number-generation/</div>
     </div>
     <div class="license-meta">
       
@@ -445,7 +449,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/09/08/review-of-prob-and-stats/" title="2. Review of Probability and Statistics">
+                      <a href="/2026/09/08/2026-09-08-review-of-prob-and-stats/" title="2. Review of Probability and Statistics">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">2. Review of Probability and Statistics</span>
                         <span class="visible-mobile">Previous</span>
@@ -476,8 +480,8 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://example.com/2026/09/08/random-number-generation/';
-          this.page.identifier = '/2026/09/08/random-number-generation/';
+          this.page.url = 'http://example.com/2026/09/08/2026-09-08-random-number-generation/';
+          this.page.identifier = '/2026/09/08/2026-09-08-random-number-generation/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');

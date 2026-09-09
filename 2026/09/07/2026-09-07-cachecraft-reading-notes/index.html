@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/blogs/cachecraft.png">
 <meta property="article:published_time" content="2026-09-08T03:30:00.000Z">
-<meta property="article:modified_time" content="2026-09-08T04:19:05.861Z">
+<meta property="article:modified_time" content="2026-09-09T05:04:31.988Z">
 <meta property="article:author" content="Wind_like">
 <meta property="article:tag" content="KV Cache">
 <meta property="article:tag" content="NLP">
@@ -285,7 +285,7 @@
 <blockquote>
 <p><strong>Reference</strong>: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2608.14555">https://arxiv.org/abs/2608.14555</a></p>
 </blockquote>
-<h2 id="1-Summary-for-a-novice">1. Summary (for a novice)</h2>
+<h2 id="1-Summary">1. Summary</h2>
 <h3 id="The-problem-in-one-paragraph">The problem in one paragraph</h3>
 <p>When an LLM reads a long prompt, it stores a “key” and a “value” vector for every token in every layer — the <strong>KV cache</strong>. For long prompts this cache can be as large as the model weights themselves, and it has to be re-read from GPU memory at every generated token. One fix is <strong>prefill-stage eviction</strong>: right after the prompt is processed and <em>before</em> the first output token, throw away the least important cached tokens (e.g. keep only 12%). The hard part is deciding <em>which</em> tokens are important. Today this is done with hand-written heuristics (e.g. “keep tokens that recent queries attended to”), and each heuristic works well on some models/compression levels and badly on others.</p>
 <h3 id="The-method-in-one-paragraph">The method in one paragraph</h3>
@@ -735,7 +735,7 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/09/08/random-number-generation/" title="3. Random Number Generation">
+                      <a href="/2026/09/08/2026-09-08-random-number-generation/" title="3. Random Number Generation">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">3. Random Number Generation</span>
                         <span class="visible-mobile">Previous</span>
