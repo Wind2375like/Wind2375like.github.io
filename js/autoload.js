@@ -3,12 +3,13 @@ I18n.locale = "en-US";
 
 I18n.translations = {};
 
-fetch("/live2d/i18n.json").then(res => res.json()).then(data => {
+// 翻译字典加载完成的信号. 组件必须等它就绪再初始化, 否则页面刚打开时
+// 问候语先于字典查表, 会显示 [missing "en-US.xxx" translation].
+const i18nReady = fetch("/live2d/i18n.json").then(res => res.json()).then(data => {
     Object.keys(data).forEach(key => {
-        console.log("key", key)
         I18n.translations[key] = data[key];
     })
-});
+}).catch(err => console.warn("live2d i18n load failed:", err));
 // live2d_path 参数建议使用绝对路径
 // const live2d_path = "https://cdn.jsdelivr.net/gh/Wind-2375-like/Wind-2375-like.github.io/";
 const live2d_path = "/live2d/";
@@ -38,6 +39,7 @@ function loadExternalResource(url, type) {
 // 加载 waifu.css live2d.min.js waifu-tips.js
 if (screen.width >= 768) {
 	Promise.all([
+		i18nReady,
 		loadExternalResource(live2d_path + "waifu.css", "css"),
 		loadExternalResource(live2d_path + "live2d.min.js", "js"),
 		loadExternalResource(live2d_path + "waifu-tips.js", "js")

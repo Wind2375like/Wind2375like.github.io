@@ -18,23 +18,24 @@
   <meta name="author" content="Wind_like">
   <meta name="keywords" content="">
   
-    <meta name="description" content="3. Random Number Generation Motivation. Consider simulating an M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1 queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly genera">
+    <meta name="description" content="Motivation. Consider simulating an M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1 queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate X∼Exp(λ)X \sim \text{Exp}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wind_like">
-<meta property="og:url" content="http://example.com/2026/09/09/random-number-generation/index.html">
+<meta property="og:title" content="3. Random Number Generation">
+<meta property="og:url" content="http://example.com/2026/09/08/random-number-generation/index.html">
 <meta property="og:site_name" content="Wind_like">
-<meta property="og:description" content="3. Random Number Generation Motivation. Consider simulating an M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1 queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly genera">
+<meta property="og:description" content="Motivation. Consider simulating an M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1M&#x2F;M&#x2F;1 queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate X∼Exp(λ)X \sim \text{Exp}">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-09-09T04:17:06.405Z">
-<meta property="article:modified_time" content="2026-09-09T04:17:08.650Z">
+<meta property="article:published_time" content="2026-09-09T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-09T04:41:33.943Z">
 <meta property="article:author" content="Wind_like">
+<meta property="article:tag" content="Simulation Modeling">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Wind_like</title>
+  <title>3. Random Number Generation - Wind_like</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -45,6 +46,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -196,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="3. Random Number Generation"></span>
           
         </div>
 
@@ -207,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-09-09 00:17" pubdate>
-          Wednesday, September 9th 2026, 12:17 am
+        <time datetime="2026-09-08 21:00" pubdate>
+          Tuesday, September 8th 2026, 9:00 pm
         </time>
       </span>
     
@@ -268,13 +271,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">3. Random Number Generation</h1>
             
             
               <div class="markdown-body">
                 
-                <h1>3. Random Number Generation</h1>
-<p><strong>Motivation.</strong> Consider simulating an <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi mathvariant="normal">/</mi><mi>M</mi><mi mathvariant="normal">/</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">M/M/1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/1</span></span></span></span> queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mtext>Exp</mtext><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X \sim \text{Exp}(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Exp</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span>, whose c.d.f. is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">F(x) = 1 - e^{-\lambda x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x \ge 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. This can be done from a single uniform random number:</p>
+                <p><strong>Motivation.</strong> Consider simulating an <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi mathvariant="normal">/</mi><mi>M</mi><mi mathvariant="normal">/</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">M/M/1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord">/1</span></span></span></span> queue (Markovian, i.e. exponential, interarrival times; exponential service times; one server). We must repeatedly generate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mtext>Exp</mtext><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X \sim \text{Exp}(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Exp</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span>, whose c.d.f. is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">F(x) = 1 - e^{-\lambda x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x \ge 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. This can be done from a single uniform random number:</p>
 <ol>
 <li>Generate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∼</mo><mi>U</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">U \sim U(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>.</li>
 <li>Return <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo>−</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mn>1</mn><mi>λ</mi></mfrac></mstyle><mi>ln</mi><mo>⁡</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">X = -\dfrac{1}{\lambda}\ln U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">λ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">U</span></span></span></span>.</li>
@@ -343,7 +345,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li><strong>Long period.</strong> A deterministic generator eventually loops. The segment of non-repeating numbers is called a <em>cycle</em>, and its length is the <em>period</em> of the RNG.</li>
 </ol>
 <pre><code class=" mermaid">flowchart LR
-    u1((u₁)) --&gt; u2((u₂)) --&gt; u3((u₃)) --&gt; d[. . .] --&gt; uP((u_P)) --&gt; u1
+    u1((&quot;u₁&quot;)) --&gt; u2((&quot;u₂&quot;)) --&gt; u3((&quot;u₃&quot;)) --&gt; d[&quot;. . .&quot;] --&gt; uP((&quot;u_P&quot;)) --&gt; u1
 </code></pre>
 <p>The sequence repeats after <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span> terms, so the period must be far longer than the number of random numbers a simulation will consume.</p>
 
@@ -354,6 +356,41 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Maths/" class="category-chain-item">Maths</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Maths/Simulation-Modeling/" class="category-chain-item">Simulation Modeling</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Simulation-Modeling/">#Simulation Modeling</a>
+      
+    </div>
   
 </div>
 
@@ -363,8 +400,8 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://example.com/2026/09/09/random-number-generation/</div>
+      <div>3. Random Number Generation</div>
+      <div>http://example.com/2026/09/08/random-number-generation/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +413,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 9, 2026</div>
+          <div>September 8, 2026</div>
         </div>
       
       
@@ -408,12 +445,18 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/09/08/review-of-prob-and-stats/" title="2. Review of Probability and Statistics">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2. Review of Probability and Statistics</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/09/09/review-of-prob-and-stats/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2026/09/07/2026-09-07-cachecraft-reading-notes/" title="Reading Notes of CacheCraft: Discovering KV Cache Eviction Policies via LLM-Guided Program Evolution">
+                        <span class="hidden-mobile">Reading Notes of CacheCraft: Discovering KV Cache Eviction Policies via LLM-Guided Program Evolution</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -433,8 +476,8 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://example.com/2026/09/09/random-number-generation/';
-          this.page.identifier = '/2026/09/09/random-number-generation/';
+          this.page.url = 'http://example.com/2026/09/08/random-number-generation/';
+          this.page.identifier = '/2026/09/08/random-number-generation/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
@@ -498,6 +541,11 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 
   
+
+
+  
+  
+
 
 
 
