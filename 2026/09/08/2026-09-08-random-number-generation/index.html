@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/blogs/simulation-modeling.png">
 <meta property="article:published_time" content="2026-09-09T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-09-10T19:29:06.062Z">
+<meta property="article:modified_time" content="2026-09-10T19:32:53.696Z">
 <meta property="article:author" content="Wind_like">
 <meta property="article:tag" content="Simulation Modeling">
 <meta name="twitter:card" content="summary_large_image">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          22k words
+          23k words
         
       </span>
     
@@ -349,7 +349,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li><strong>Long period.</strong> A deterministic generator eventually loops. The segment of non-repeating numbers is called a <em>cycle</em>, and its length is the <em>period</em> of the RNG.</li>
 </ol>
 <pre><code class=" mermaid">flowchart LR
-    u1((u₁)) --&gt; u2((u₂)) --&gt; u3((u₃)) --&gt; d[. . .] --&gt; uP((u_P)) --&gt; u1
+    u1((&quot;u₁&quot;)) --&gt; u2((&quot;u₂&quot;)) --&gt; u3((&quot;u₃&quot;)) --&gt; d[&quot;. . .&quot;] --&gt; uP((&quot;u_P&quot;)) --&gt; u1
 </code></pre>
 <p>The sequence repeats after <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span> terms, so the period must be far longer than the number of random numbers a simulation will consume.</p>
 <h2 id="3-2-Linear-Congruential-Generators-LCGs">3.2. Linear Congruential Generators (LCGs)</h2>
