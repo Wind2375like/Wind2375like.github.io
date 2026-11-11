@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/site-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -195,7 +195,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/site-banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
@@ -300,27 +300,27 @@
 <tbody>
 <tr>
 <td><strong>1. 下注 (Bet)</strong><br>选筹码确认下注金额, 设为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>.</td>
-<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260827232756.png" srcset="/img/loading.gif" lazyload alt="image.png"></td>
+<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260827232756.png" srcset="/img/site-loading.gif" lazyload alt="image.png"></td>
 </tr>
 <tr>
 <td><strong>2. 发牌 (Deal)</strong><br>你得到两张明牌, 庄家一张明牌 (upcard) + 一张底牌. 若你头两张恰好是 A + 10 点牌, 即 <strong>Blackjack</strong>, 只有庄家同为 Blackjack 才平局, 否则你赢</td>
-<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828140147.png" srcset="/img/loading.gif" lazyload alt="image.png"><br></td>
+<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828140147.png" srcset="/img/site-loading.gif" lazyload alt="image.png"><br></td>
 </tr>
 <tr>
 <td><strong>3. (可能出现) 保险 (Insurance)</strong><br>庄家明牌是 A 时会先询问保险: 至多押主注一半 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi></mrow><annotation encoding="application/x-tex">\frac{1}{2}x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">x</span></span></span></span>, 赌庄家底牌是 10 点牌, 如果是的话, 你取回下注筹码并额外获得 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 赌注 (1 赔 2, 总金额<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">+x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord mathnormal">x</span></span></span></span>), 否则总金额 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi></mrow><annotation encoding="application/x-tex">-\frac{1}{2}x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">x</span></span></span></span> (下注金额另算)</td>
-<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828140643.png" srcset="/img/loading.gif" lazyload alt="image.png"><br></td>
+<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828140643.png" srcset="/img/site-loading.gif" lazyload alt="image.png"><br></td>
 </tr>
 <tr>
 <td><strong>4. 你的回合: 要牌 / 停牌 (Hit / Stand)</strong><br>每回合要么要一张牌, 要么停牌, 点数一旦超过 21 就爆牌立即输掉赌注, 停牌后开始庄家的回合.</td>
-<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260827232953.png" srcset="/img/loading.gif" lazyload alt="image.png"></td>
+<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260827232953.png" srcset="/img/site-loading.gif" lazyload alt="image.png"></td>
 </tr>
 <tr>
 <td><strong>5. (可能出现) 第一回合: 双倍 / 分牌 (Double / Split)</strong><br>第一回合还可以出现:<br>1. <strong>Double</strong>: 只在头两张时可用, 赌注 x2, 只再发一张, 自动停牌. <br>2. <strong>Split</strong>: 头两张点数一样的时候 (10JQK 是一样的牌), 补一份等额注, 把牌拆成两份各自进行要牌或者停牌, 分别与庄家比. 分出的手一般仍可 Double, 分出的一对 A 每边只补一张.</td>
-<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828141239.png" srcset="/img/loading.gif" lazyload alt="image.png"></td>
+<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828141239.png" srcset="/img/site-loading.gif" lazyload alt="image.png"></td>
 </tr>
 <tr>
 <td><strong>6. 庄家回合与结算</strong><br>你停牌后庄家翻开底牌, 机械执行固定规则: 不到 17 必须拿, 到 17 及以上必须停. 硬 17 规则到软 17 再拿一张.<br><br>按照这个规则比较: “Blackjack &gt; 普通 21 点 (至少 3 张牌的 21 点) &gt; 20 &gt; 19 &gt; 18 &gt; … &gt; 4 &gt; 庄家爆牌 &gt; 玩家爆牌”.<br><br>输了下注 x 全给庄家 (-x), 平了不亏不赚 (0), 赢了如果不是 Blackjack 获得 (+x) 赌注, 如果是 Blackjack 则获得 +1.5x (2 赔 3) 或者 +1.2x (5 赔 6) 的赌注.</td>
-<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828141135.png" srcset="/img/loading.gif" lazyload alt="image.png"></td>
+<td><img src="https://raw.githubusercontent.com/Wind2375like/I-m_Ghost/main/img20260828141135.png" srcset="/img/site-loading.gif" lazyload alt="image.png"></td>
 </tr>
 </tbody>
 </table>

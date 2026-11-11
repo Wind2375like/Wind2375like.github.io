@@ -81,7 +81,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/site-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -197,7 +197,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/site-banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
@@ -282,7 +282,7 @@
                 
                 <p><strong>Keywords:</strong> Inference Graphs, Transfer Learning, Defeasible Reasoning, Human Aiding.</p>
 <span id="more"></span>
-<img alt="Fig 1" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/5e400103c58e8b20417827784022bd36321554b8932953bc79f3d4cd060d2dee.png" srcset="/img/loading.gif" lazyload />
+<img alt="Fig 1" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/5e400103c58e8b20417827784022bd36321554b8932953bc79f3d4cd060d2dee.png" srcset="/img/site-loading.gif" lazyload />
 <p>Link: <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2105.05418.pdf">2105.05418.pdf (arxiv.org)</a></p>
 <h2 id="Contribution">Contribution</h2>
 <ul>
@@ -292,24 +292,24 @@
 </ul>
 <h2 id="Method">Method</h2>
 <h3 id="Inference-Graph-and-Influence-Graph">Inference Graph and Influence Graph</h3>
-<img alt="Fig 2" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/aaac32bcb2ab9b58ed0f595dfab10c0f6efec1727fae8cbcdff2ed41aaaf87fe.png" srcset="/img/loading.gif" lazyload />
+<img alt="Fig 2" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/aaac32bcb2ab9b58ed0f595dfab10c0f6efec1727fae8cbcdff2ed41aaaf87fe.png" srcset="/img/site-loading.gif" lazyload />
 <p>A typical causal inference is <code>P -&gt; H</code>, where <code>P</code> is the premise and <code>H</code> is the hypothesis, i.e. the outcome of the premise. The arrow shows the causal relationship. Given new evidence, the hypothesis may be strengthened <code>P|U -+-&gt; H</code> or weakened <code>P|U- -x-&gt; H</code>. When it is weakened, this kind of reasoning is called defeasible reasoning. We can treat <code>U</code> as “assumptions” and <code>U-</code> as “defeaters”.</p>
 <p>Then the paper adopted an inference graph (left). Added contextualizers (something related to premises) and mediators (deduction step from <code>U</code> to <code>H</code>). Actually, I think it is the dataset WIQA’s contribution (the two works share the same author Niket) instead of the paper. But anyway the paper switched its context from inference graph to influence graph (right), which is directly from WIQA.</p>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img alt="Fig 3" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/f36f9ba147a9e2566ea2f9705f2e7b4f06bcabc54772063a67ad538feb065a9b.png" srcset="/img/loading.gif" lazyload width=50% /></div><div class="group-image-wrap"><img alt="Fig 4" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/24ebec2264b5bf120a465ebce58e4fb71b9800c8f8961b36c594459648f31619.png" srcset="/img/loading.gif" lazyload width=50%/></div></div></div>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img alt="Fig 3" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/f36f9ba147a9e2566ea2f9705f2e7b4f06bcabc54772063a67ad538feb065a9b.png" srcset="/img/site-loading.gif" lazyload width=50% /></div><div class="group-image-wrap"><img alt="Fig 4" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/24ebec2264b5bf120a465ebce58e4fb71b9800c8f8961b36c594459648f31619.png" srcset="/img/site-loading.gif" lazyload width=50%/></div></div></div>
 <p>Green arrow: positive effect. Red arrow: negative effect.</p>
 <h3 id="Transfer-Learning">Transfer Learning</h3>
 <p>Transfer learning is that you want to let your model perform a task on one dataset, but it doesn’t have any label. So you find another similar dataset with labels and adjust it to the same format as your intended task/dataset. Then you train your model on this similar dataset and then do the prediction on your target dataset.</p>
 <p>Since the domain in the test set has changed, a good performance in the test set will indicate not only good accuracy but also excellent generalizability.</p>
 <p>The paper aims to generate an influence graph given <code>P</code>, <code>H</code>, and <code>U</code>. It uses seq2seq architecture. The input of encoder is easy, which is:</p>
-<img alt="Fig 5" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/0b16ab260bf0ce6c2a55d66a46a9991ccd11eee92253b84a7d73dcb479432bf8.png" srcset="/img/loading.gif" lazyload />
+<img alt="Fig 5" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/0b16ab260bf0ce6c2a55d66a46a9991ccd11eee92253b84a7d73dcb479432bf8.png" srcset="/img/site-loading.gif" lazyload />
 <p>The output of decoder is the sequential representation of the influential graph. See the appendix for detail.</p>
-<img alt="Fig 6" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/8a03da0d2851efa544057266c1382199a4b9d3c0e046a6447098927ce7843a07.png" srcset="/img/loading.gif" lazyload />
+<img alt="Fig 6" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/8a03da0d2851efa544057266c1382199a4b9d3c0e046a6447098927ce7843a07.png" srcset="/img/site-loading.gif" lazyload />
 <p>The authors train the models (GPT2, T5) on WIQA and generate these graphs on SNLI, SOCIAL, and ATOMIC.</p>
 <p>They did a train-test split to WIQA and evaluate their model.</p>
-<img alt="Fig 7" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/90d230c07462707fc530967d3b99a94104cea66b26a27d02879ad817c01eaa5c.png" srcset="/img/loading.gif" lazyload />
+<img alt="Fig 7" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/90d230c07462707fc530967d3b99a94104cea66b26a27d02879ad817c01eaa5c.png" srcset="/img/site-loading.gif" lazyload />
 <h3 id="Human-Improvement">Human Improvement</h3>
 <p>Then they see if the graph helps people. They sample a challenging subset.</p>
-<img alt="Fig 8" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/91c77c1c460f40ad46021f486a00c1e3b526bd43551bceda704ae511489b4a67.png" srcset="/img/loading.gif" lazyload />
+<img alt="Fig 8" src="https://cdn.jsdelivr.net/gh/Wind2375like/I-m_Ghost@main/img/91c77c1c460f40ad46021f486a00c1e3b526bd43551bceda704ae511489b4a67.png" srcset="/img/site-loading.gif" lazyload />
 <p>There is some improvement.</p>
 
                 

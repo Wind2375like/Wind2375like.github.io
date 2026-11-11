@@ -77,7 +77,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/site-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -193,7 +193,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/site-banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
@@ -279,12 +279,12 @@
      data-hbe-format="4"
      data-wpm="密码错误, 请重新输入."
      data-whm="密码错误, 请重新输入."
-     data-salt="153133d56da7d93178d2f48398d6b80f7e3e9d7c2a7e65b051ce709e1dd4abf9"
-     data-nonce="4ce64e5c8b97eeeff6ee4a98"
+     data-salt="666d82729c6033a5638daa597d02bc214825a5bd80c8f39e66096a1166a0a3a5"
+     data-nonce="c70de94e960d3222c6a07c86"
      data-kdf-iterations="600000"
      data-auto-save="false">
   <script id="hbeData" type="hbeData">
-    be4648a5dd45fcae5dd2f4983c3d3b4aeaf0ecc5f5937be567bae19f6b93b61a7a116ea4decc34d574da85ee7980d9896e4c0f10c53a138e8c266061773eaf188e5ff5d462d918ce3aee4e23350da1f1d07806e7e1548d3996bae4b47dacf5f2b8f2334a71394c2a621f1effd5fe0259e829656218f392e3abb5a53f738b5632645eef369a3d26338b4b4cc425bd49a015eb2b59dd8ad2a5a9f59358c478791eb04a20c425e7c607fbbf5123a4882907b329a8e7f6d5b12e3e45350897586b66ff56a55915cefdddc45d87e4b1f1d9ba7c43f0d8d74c388c6f0855c64fea17d9449ef683d90c491721952ff03784a3bad3fbaebd5b4a950fd82e263f7748b2f21ac93a80e3c02b847bac41c7e34a50af5e50fe4371260b6131c63f0651021be180b2c193368ee675df9592b11e8795b0e4f6032760526421cdb67813a1fc86715518379ba07c4cd5b147d22886508e136528e56629fc60572ea4696b0f01aaf0695e2df026c976854a80706c8eeb74c3d2a0bb17f3864f7e40a827c5db132b37db4eeb0d20b06b7a6325f76495f0f65a3c91557c9b08691d87a3c730fa45c074b80558984e8b52378aaae708b592cb15a1d874557bb17242960cfb2326a896b83ae94ab3f8ac648d2aba99add8dd0a21a11d7f50b99d74213b9a82f95f40329788454073d9c6425f4519643d05fa5f2efe508f914ae58f06f11c07828fbc46a7e74647ff23d7bd7d5692da5a8137e7963900d79da57c4f54d9580c1ca94380f7c8598d1b22ea6edf2cc2eeccd98709ad41bbd5980c03d6042d003a2ab9cc5ff2dfc287d5717090cc90b37cb906ac19010290c6023b62d681bb1df03c52084117413c9e51e9f1d12d4843b861b87644d59d592395f9e63e1af58a11d343de81a7b744fc7e291dd134a0866f5546d29195f045a6e7df0d0a5f4c4689b2a6e2950091a43016e54f640fb6f456861f4d56f15282194cfd695c7cc853ccf38f62823aed625522166747958c87ff6f2072695623f4ded931342deb12e3528c058e50edf1ed6a14352d5d224c8724817238849d4a0c228465249ed8eaf6017a404272c3a5112788511c490791671b51355d73f2e2f10841c432c81e1c20e155e83636b4e141b3386da87034328ee40c65df0910a7d16e5bfce516f0865dff7de3514208375b9416b19efb225d2bf56e135352323aaaee10c71c1709dbd6ff8bd9d65cedea
+    c345ae78102427fa6211e99d8143f1b22aa40b3b55ac042486cf94d000a580ae1ec563eeebd0ce71f4a43159a684c443e5396fa9d545d14f28c130261d395ed2a640520f1d14690194eda1ddcf586c24034cc02f2762691f7584c8cde21687a558808bcc9fe2d4953ef491a872fe980d69f77ce5a39490b5d7671f523a06cc90ebc5008fbdb814ccc7c7acb45b90305971461b39218ef256cf6cea732342135cc13070c3e93a9807f4aff264a47da485a451174ca3f10ba9de870a93e7c3c2256496221f3c57e317d37e5caf24d0123f32b8849d4004008701c61f3cfc9fe79e7ee7800b5c2b393f0c3c6e2638cdf87152286858f223e6342a93a60f71f037b93e8ee8c2645ccbdd313c54b97623e3d36a0c2376e60b476b35b43a19cd7a881f1370237aea0afaf8de10268432d0e3477c383e27854be0ac06c1c36f0b766d211e5a59ec0953649de45f67b7e65133b4d81989a7ce3c6f5cc2a5772cf210a3a6f991badb48a55ccf5368dcacfdf425fb0b469bf56942191ae3f6c5febd02c36cab3cf879c22fcaf3c2f6780942812c5afeee0364436f4f9786be5fff30bbbdc45e7b0fcba4e34a2d889dbe9870b7c94163ed608199a4f1d312aab97c1402495c7c64e735c00901b137bd89cc1c592a50da86f0004bc59214ba12dd1f35f95abdb4cc56f5112326629ea3ca45bf9aa5e83bca7062ceceabdef8f56e1acc46214fdaa001ddee3bcc3cdcc5ee7e9187e940514c5afd6b67397e85a1b19637374f580ae24803e4de9849a582764e7d6a38a9414b9c1f747e48ab180acb50bd93c090e9f25f8cd1b7359d36e1852c2faa637bc89cbefe4ac7943e938479204ae9a398e6fa46cb3315c98f064e44fae591d405dca498dfded9ff72e709b478a07ed1c12664c979dc5b5196945fce6144d7b62fd8daf09236bb1f2e767448c6c30edbe17d172ce0c460e4192b241b1a8e73a939532ea756ae96bab3bee72cd599d042e09606ba1001a5e9bd3eb185c98e78dfa4fe1dcc76392eba2e7e14e42c05447105c864b685a0f9eaa6ab3bfb901908605878743e6e7344492d8017b14ab63542ac0de6fcf91720751985484f967c778db299b09c223c63f96dfb5c4b43d1232b9345e66bac6126fb5cffd3b95bad4103dab3d705976d99d4f3c0d1dbe2a2eb13142989263ec63eaabd3b0781ecc8fa1d834f9c8d630b3f865b480a79c7f1db6849b8
   </script>
   <div class="hbe hbe-content">
     <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
